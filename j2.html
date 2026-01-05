@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no, viewport-fit=cover,maximum-scale=1 , minimum-scale=1">
+    
+</head>
+
+
+<body >
+
+<div class="card1">
+
+<div>
+
+<div class="div1">
+    <label class="lable1">DAY</label>
+    <br>
+    
+    <input id="input_day" class="input1" placeholder="DD">
+</div>
+
+<div class="div1">
+    <label class="lable1">MONTH</label>
+    <br>
+    
+    <input id="input_month" class="input1" placeholder="MM">
+</div>
+
+<div class="div1">
+    <label class="lable1">YEAR</label>
+    <br>
+    
+    <input id="input_year" class="input1" placeholder="YYYY">
+</div>
+</div>
+
+
+  <div class="div-p1">
+<div style="border-top:1px solid rgb(208, 204, 204) ;">
+    
+ </div>
+</div>
+
+
+<div class="div-p2">
+  <div class="div-dire" onclick="show()">
+  <img class="img2" src="m7.png">
+  </div>
+</div>
+
+
+<div class="show1">
+  <span  id="years" style="color:#eb9ff1 ;">- -</span> years
+</div>
+
+<div class="show1">
+  <span  id="months"style="color: #eb9ff1 ;">- -</span> months
+</div>
+
+<div class="show1">
+  <span id="days" style="color:#eb9ff1 ;">- -</span> days
+</div>
+
+<div class="show1">
+  <span id="sec" style="color:#eb9ff1 ;">- -</span> sec
+</div>
+
+</div>
+
+
+
+<script>
+
+  function show() {
+
+  var day = document.getElementById("input_day").value;
+  var month = document.getElementById("input_month").value;
+  var year = document.getElementById("input_year").value;
+
+  var  emroz_sal='1404'
+  var  emroz_mah='9'
+  var  emroz_day='15'
+  
+  var all_days= (parseInt(emroz_sal) * 365) + (parseInt(emroz_mah) *30) + (parseInt(emroz_day)  )
+  var tavalod_days= (parseInt(year) * 365) +(parseInt(month) *30) + (parseInt(day) )
+
+  var all_months= (parseInt(emroz_sal) * 12) + (parseInt(emroz_mah))
+  var tavalod_months= (parseInt(year) * 12) +(parseInt(month))
+
+  var all_sec= (parseInt(emroz_sal) * 12) + (parseInt(emroz_mah))
+  var tavalod_months= (parseInt(year) * 12) +(parseInt(month))
+  
+  day= all_days - tavalod_days;
+  month= all_months - tavalod_months;
+
+  year = parseInt(emroz_sal) - (year);
+  
+  var tavalod_sec= (day * 24 * 3600)
+  
+  document.getElementById("years").innerText=year;
+  document.getElementById("months").innerText=month;
+  document.getElementById("days").innerText=day;
+  document.getElementById("sec").innerText=tavalod_sec;
+  }
+
+
+</script>
+
+</body>
+</html>
